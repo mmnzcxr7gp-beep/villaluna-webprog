@@ -1,27 +1,45 @@
 {
-  "name": "villaluna-client",
+  "name": "oopsie-daisy-client",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Oopsie Daisy client — React + Vite starter for the Oopsie Daisy project.",
+  "author": "Sam Irian Villaluna <you@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourname/oopsie-daisy"
+  },
+  "bugs": {
+    "url": "https://github.com/yourname/oopsie-daisy/issues"
+  },
+  "homepage": "https://github.com/yourname/oopsie-daisy#readme",
+  "keywords": [
+    "oopsie-daisy",
+    "react",
+    "vite",
+    "tailwind",
+    "starter"
+  ],
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.0",
-    "eslint": "^9.39.4",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
     "vite": "^8.0.0"
   }
 }
