@@ -1,0 +1,106 @@
+/* Coffee Shop Aesthetic Classes */
+
+.button-icon {
+  @apply h-5 w-5 fill-current;
+}
+
+/* Updated aspect ratio for card images */
+.aspect-4\/3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* Navigation link styling with warm hover states */
+.nav-link-transition {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Custom Coffee Palette Backgrounds */
+.bg-coffee-light {
+  background-color: #f7efe4;
+}
+
+.bg-coffee-medium {
+  background-color: #d4b9a4;
+}
+
+.bg-coffee-dark {
+  background-color: #4c2d25;
+}
+
+/* Beige background for a warmer feel */
+.bg-beige {
+  background-color: #f7f1e8;
+}
+
+/* Aesthetic page background */
+.page-background {
+  background-color: #f6f6f6;
+}
+
+.wireframe-hero-panel {
+  min-height: auto;
+}
+
+.wireframe-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kpi-card {
+  min-height: 12rem;
+}
+
+.wireframe-card {
+  width: 100%;
+}
+
+.bg-coffee-small {
+  background-color: #39221a;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+/* Card styling inspired by cozy cafe layouts */
+article {
+  @apply shadow-sm hover:shadow-md transition-shadow duration-300;
+  background-color: #fafafa;
+}
+
+/* Specialized section borders for a clean coffee shop menu look */
+section {
+  @apply border-y border-stone-200;
+  scroll-margin-top: 6rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-image-card {
+  min-height: 16rem;
+}
+
+.hero-card {
+  max-width: 28rem;
+}
+
+.gallery-card {
+  min-height: 16rem;
+}
+
+.full-image,
+.hero-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
