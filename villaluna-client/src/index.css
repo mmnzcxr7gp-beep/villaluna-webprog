@@ -9,13 +9,11 @@
   *,
   ::after,
   ::before {
-    /* Using a warm coffee-toned border color */
-    @apply border-stone-300;
+    @apply border-zinc-200;
   }
 
   body {
-    /* Coffee shop inspired beige background */
-    @apply bg-[#f5f2ed] text-stone-900 antialiased;
+    @apply bg-slate-50 text-zinc-900 antialiased;
   }
 }
 
@@ -34,3 +32,4 @@
   object-fit: cover;
   display: block;
 }
+

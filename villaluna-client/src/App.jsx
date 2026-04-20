@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Layout from './assets/components/Layout';
 import HomePage from './pages/homepage';
+import AboutPage from './pages/Aboutpage';
+import ArticlePage from './pages/Article.page';
 
 const routes = [
   {
@@ -11,6 +13,14 @@ const routes = [
       {
         path: '',
         element: <HomePage />,
+      },
+      {
+        path: 'about',
+        element: <AboutPage />,
+      },
+      {
+        path: 'article',
+        element: <ArticlePage />,
       },
     ],
   },

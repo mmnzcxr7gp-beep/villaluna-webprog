@@ -1,40 +1,40 @@
-/* Coffee Shop Aesthetic Classes */
+/* Partnership Theme Classes */
 
 .button-icon {
   @apply h-5 w-5 fill-current;
 }
 
 /* Updated aspect ratio for card images */
-.aspect-4\/3 {
+.aspect-4/3 {
   aspect-ratio: 4 / 3;
 }
 
-/* Navigation link styling with warm hover states */
+/* Navigation link styling with clean hover states */
 .nav-link-transition {
   @apply transition-all duration-200 ease-in-out;
 }
 
-/* Custom Coffee Palette Backgrounds */
-.bg-coffee-light {
-  background-color: #f7efe4;
+/* Neutral Partnership Palette */
+.bg-partner-light {
+  background-color: #f8f9fa;
 }
 
-.bg-coffee-medium {
-  background-color: #d4b9a4;
+.bg-partner-medium {
+  background-color: #e9ecef;
 }
 
-.bg-coffee-dark {
-  background-color: #4c2d25;
+.bg-partner-dark {
+  background-color: #495057;
 }
 
-/* Beige background for a warmer feel */
-.bg-beige {
-  background-color: #f7f1e8;
+/* Light gray background */
+.bg-partner-beige {
+  background-color: #f8f9fa;
 }
 
-/* Aesthetic page background */
+/* Clean page background */
 .page-background {
-  background-color: #f6f6f6;
+  background-color: #f8fafc;
 }
 
 .wireframe-hero-panel {
@@ -55,24 +55,20 @@
   width: 100%;
 }
 
-.bg-coffee-small {
-  background-color: #39221a;
-}
-
 .glass-panel {
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(18px);
 }
 
-/* Card styling inspired by cozy cafe layouts */
+/* Card styling for clean portfolio look */
 article {
   @apply shadow-sm hover:shadow-md transition-shadow duration-300;
-  background-color: #fafafa;
+  background-color: #fafbfc;
 }
 
-/* Specialized section borders for a clean coffee shop menu look */
+/* Section borders for modern look */
 section {
-  @apply border-y border-stone-200;
+  @apply border-y border-zinc-200;
   scroll-margin-top: 6rem;
 }
 
@@ -104,3 +100,4 @@ html {
   object-fit: cover;
   display: block;
 }
+
