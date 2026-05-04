@@ -20,9 +20,12 @@ const HomePage = () => {
               From seasonal arrangements to custom floral gifts, every bouquet is thoughtfully designed,
               freshly picked, and delivered with love.
             </p>
-            <div className="mt-6">
+            <div className="mt-6 flex gap-3">
               <Button to="/about" variant="primary">
                 Discover oopsiedaisy.mnl
+              </Button>
+              <Button to="/dashboard" className="!border-zinc-900 !bg-white !text-zinc-900 hover:!bg-zinc-900 hover:!text-white shadow-sm shadow-zinc-900/20">
+                Admin Dashboard
               </Button>
             </div>
           </div>
@@ -102,7 +105,7 @@ const HomePage = () => {
             <p className="mt-3 text-sm leading-6 text-zinc-600">
               Vibrant mixes of seasonal blooms handpicked from local farms, perfect for any celebration.
             </p>
-            <Button className="mt-4 w-full" variant="primary">
+            <Button to="/articles" className="mt-4 w-full" variant="primary">
               View More
             </Button>
           </article>
@@ -121,7 +124,7 @@ const HomePage = () => {
             <p className="mt-3 text-sm leading-6 text-zinc-600">
               Timeless elegance in every petal. Romantic reds, soft pinks, and pure whites for every heart.
             </p>
-            <Button className="mt-4 w-full" variant="primary">
+            <Button to="/articles" className="mt-4 w-full" variant="primary">
               View More
             </Button>
           </article>
@@ -140,7 +143,7 @@ const HomePage = () => {
             <p className="mt-3 text-sm leading-6 text-zinc-600">
               Personalized creations designed for your special moments. Gifts as unique as your story.
             </p>
-            <Button className="mt-4 w-full" variant="primary">
+            <Button to="/articles" className="mt-4 w-full" variant="primary">
               View More
             </Button>
           </article>

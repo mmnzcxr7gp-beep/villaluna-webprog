@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/styles/OOPSIEDAISY LOGO.jpg";
 
 const links = [
@@ -34,18 +34,35 @@ const NavBar = () => {
           </div>
         </NavLink>
 
-        <nav className="hidden items-center gap-3 md:flex">
-          {links.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.to === "/"}
-              className={navLinkClassName}
+        <div className="hidden items-center gap-4 md:flex">
+          <nav className="flex items-center gap-3">
+            {links.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === "/"}
+                className={navLinkClassName}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <Link
+              to="/signin"
+              className="rounded-full border-2 border-transparent px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600 transition duration-200 hover:border-amber-900 hover:bg-amber-100 hover:text-zinc-950"
             >
-              {link.label}
-            </NavLink>
-          ))}
-        </nav>
+              Sign In
+            </Link>
+            <Link
+              to="/signup"
+              className="rounded-full border-2 border-amber-900 bg-amber-900 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-white shadow-sm shadow-amber-900/20 transition duration-200 hover:bg-amber-800"
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
       </div>
     </header>
   );
