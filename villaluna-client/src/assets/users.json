@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "firstName": "Liam",
+    "lastName": "Carter",
+    "age": "24",
+    "gender": "male",
+    "contactNumber": "09171234567",
+    "email": "liam.carter@example.com",
+    "role": "admin",
+    "username": "liamcarter",
+    "password": "password123",
+    "address": "21 Pine Street, Manila",
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "firstName": "Ava",
+    "lastName": "Reyes",
+    "age": "29",
+    "gender": "female",
+    "contactNumber": "09182345678",
+    "email": "ava.reyes@example.com",
+    "role": "editor",
+    "username": "avareyes",
+    "password": "securepass9",
+    "address": "89 Lakeview Ave, Cebu",
+    "status": "inactive"
+  },
+  {
+    "id": 3,
+    "firstName": "Noah",
+    "lastName": "Santos",
+    "age": "31",
+    "gender": "male",
+    "contactNumber": "09193456789",
+    "email": "noah.santos@example.com",
+    "role": "viewer",
+    "username": "noahsantos",
+    "password": "viewerpass8",
+    "address": "12 Rizal Blvd, Davao",
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "firstName": "Mia",
+    "lastName": "Delos Reyes",
+    "age": "27",
+    "gender": "female",
+    "contactNumber": "09204567890",
+    "email": "mia.reyes@example.com",
+    "role": "editor",
+    "username": "miareyes",
+    "password": "mypassword88",
+    "address": "43 Garden Road, Iloilo",
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "firstName": "Ethan",
+    "lastName": "Flores",
+    "age": "22",
+    "gender": "other",
+    "contactNumber": "09215678901",
+    "email": "ethan.flores@example.com",
+    "role": "viewer",
+    "username": "ethanflores",
+    "password": "ethanpass10",
+    "address": "55 Sunset Drive, Baguio",
+    "status": "inactive"
+  }
+]
