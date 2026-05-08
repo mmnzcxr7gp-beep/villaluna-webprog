@@ -1,7 +1,7 @@
 import { Box, Grid, Card, CardContent, Typography } from '@mui/material';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { BarChart } from '@mui/x-charts/BarChart';
-import logo from '../../assets/styles/OOPSIEDAISY LOGO.jpg';
+import logo from '../../assets/styles/oopsiedy-logo.jpg';
 
 const DashboardPage = () => {
   const stats = [

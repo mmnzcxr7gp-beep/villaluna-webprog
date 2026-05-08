@@ -8,7 +8,7 @@ import {
   Button, 
   Alert 
 } from '@mui/material';
-import backgroundImage from "../../assets/styles/OOPSIEDAISY BACKGROUND.jpg";
+import backgroundImage from "../../assets/styles/oopsiedy-background.jpg";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({

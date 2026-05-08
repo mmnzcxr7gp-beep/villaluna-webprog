@@ -10,7 +10,7 @@ import {
   Checkbox,
   Alert 
 } from '@mui/material';
-import backgroundImage from "../../assets/styles/OOPSIEDAISY BACKGROUND.jpg";
+import backgroundImage from "../../assets/styles/oopsiedy-background.jpg";
 
 const SignInPage = () => {
   const [formData, setFormData] = useState({
