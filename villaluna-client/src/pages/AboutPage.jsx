@@ -155,7 +155,8 @@ const AboutPage = () => {
                 />
               </div>
             </div>
-            <Button className="mt-5 w-full" variant="primary">
+            {/* This button uses React Router navigation to open the Articles page. */}
+            <Button to="/articles" className="mt-5 w-full" variant="primary">
               View Our Collection
             </Button>
           </div>

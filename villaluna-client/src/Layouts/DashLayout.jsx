@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate, Link } from 'react-router-dom';
 import {
   Box,
   CssBaseline,
@@ -13,13 +13,15 @@ import {
   ListItemIcon,
   ListItemText,
   IconButton,
-  Divider
+  Divider,
+  TextField,
+  Button
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import PeopleIcon from '@mui/icons-material/People';
-import { Link } from 'react-router-dom';
+import ArticleIcon from '@mui/icons-material/Article';
 
 const drawerWidth = 240;
 
@@ -27,13 +29,22 @@ const navItems = [
   { text: 'Dashboard', icon: <DashboardIcon />, to: '' },
   { text: 'Reports', icon: <BarChartIcon />, to: 'reports' },
   { text: 'Users', icon: <PeopleIcon />, to: 'users' },
+  { text: 'Articles', icon: <ArticleIcon />, to: 'articles' },
 ];
 
 function DashLayout() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('type');
+    localStorage.removeItem('firstName');
+    navigate('/', { replace: true });
   };
 
   const drawerContent = (
@@ -79,6 +90,33 @@ function DashLayout() {
           <Typography variant="h6" noWrap component="div" fontWeight={600}>
             OopsieDaisy Admin
           </Typography>
+          <Box sx={{ flexGrow: 1 }} />
+          <TextField
+            size="small"
+            placeholder="Search..."
+            variant="outlined"
+            sx={{
+              mr: 2,
+              bgcolor: 'white',
+              borderRadius: 1,
+              minWidth: { xs: 140, sm: 220 },
+              '& .MuiOutlinedInput-root': {
+                height: 36,
+              },
+            }}
+          />
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: '#7c2d12',
+              '&:hover': { bgcolor: '#431407' },
+              textTransform: 'none',
+              fontWeight: 600,
+            }}
+            onClick={handleLogout}
+          >
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
       <Box
@@ -125,4 +163,3 @@ function DashLayout() {
 }
 
 export default DashLayout;
-
