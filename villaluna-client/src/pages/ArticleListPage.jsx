@@ -1,7 +1,25 @@
+import { useEffect, useState } from "react";
 import Button from "../components/Button";
-import ArticleList from "../components/ArticleList";
+import ArticleService from "../services/ArticleService";
 
 const ArticleListPage = () => {
+  const [articles, setArticles] = useState([]);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  useEffect(() => {
+    const loadArticles = async () => {
+      try {
+        // Public page: show only active articles for visitors.
+        const data = await ArticleService.getArticles({ status: "active" });
+        setArticles(data);
+      } catch (error) {
+        setErrorMsg("Failed to load articles.");
+      }
+    };
+
+    loadArticles();
+  }, []);
+
   return (
     <div className="flex w-full flex-col gap-6">
       <section className="border-y-2 border-zinc-900 bg-zinc-50">
@@ -31,7 +49,23 @@ const ArticleListPage = () => {
               All floral guides and stories
             </h2>
           </div>
-          <ArticleList />
+
+          {errorMsg ? (
+            <p className="text-sm text-red-600">{errorMsg}</p>
+          ) : (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {articles.map((article) => (
+                <article key={article._id} className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm">
+                  <p className="text-xs uppercase tracking-wide text-amber-700">{article.slug}</p>
+                  <h3 className="mt-1 text-lg font-semibold text-zinc-900">{article.title}</h3>
+                  <p className="mt-2 text-sm text-zinc-600">{article.preview}</p>
+                </article>
+              ))}
+              {articles.length === 0 && (
+                <p className="text-sm text-zinc-600">No active articles available yet.</p>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </div>

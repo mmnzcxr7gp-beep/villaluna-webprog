@@ -1,12 +1,15 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
 // Main Layout
 import Layout from "./components/Layout";
 
 // Dashboard Layout
-import DashLayout from "./layouts/DashLayout";
+import DashLayout from "./Layouts/DashLayout";
+
+// Auth Layout
+import AuthLayout from "./Layouts/AuthLayout";
 
 // Pages
 import ArticlePage from "./pages/ArticlePage";
@@ -15,11 +18,13 @@ import ArticleDetailPage from "./pages/ArticleDetailPage";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import SignInPage from "./pages/AuthPages/SignInPage";
-import SignUpPage from "./pages/AuthPages/SignUpPage";
+import Login from "./pages/AuthPages/Login";
+import SignUp from "./pages/AuthPages/SignUp";
 import DashboardPage from "./pages/DashboardPages/DashboardPage";
 import ReportsPage from "./pages/ReportsPage";
 import UsersPage from "./pages/UsersPage";
+import DashArticleListPage from "./pages/DashboardPages/DashArticleListPage";
+import { STORAGE_KEYS } from "./constants";
 
 const oopsieTheme = createTheme({
   palette: {
@@ -90,6 +95,17 @@ const oopsieTheme = createTheme({
   },
 });
 
+const getUserType = () => localStorage.getItem(STORAGE_KEYS.type);
+
+const ProtectedRoute = ({ allowedTypes, children }) => {
+  const token = localStorage.getItem(STORAGE_KEYS.token);
+  const type = getUserType();
+
+  if (!token) return <Navigate to="/auth/signin" replace />;
+  if (!allowedTypes.includes(type)) return <Navigate to="/" replace />;
+  return children;
+};
+
 const routes = [
   {
     path: "/",
@@ -116,16 +132,26 @@ const routes = [
         element: <ArticleDetailPage />,
       },
       {
-        path: "signin",
-        element: <SignInPage />,
-      },
-      {
-        path: "signup",
-        element: <SignUpPage />,
+        path: "auth",
+        element: <AuthLayout />,
+        children: [
+          {
+            path: "signin",
+            element: <Login />,
+          },
+          {
+            path: "signup",
+            element: <SignUp />,
+          },
+        ],
       },
       {
         path: "dashboard",
-        element: <DashLayout />,
+        element: (
+          <ProtectedRoute allowedTypes={["admin", "editor"]}>
+            <DashLayout />
+          </ProtectedRoute>
+        ),
         children: [
           {
             path: "",
@@ -137,7 +163,19 @@ const routes = [
           },
           {
             path: "users",
-            element: <UsersPage />,
+            element: (
+              <ProtectedRoute allowedTypes={["admin"]}>
+                <UsersPage />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: "articles",
+            element: (
+              <ProtectedRoute allowedTypes={["admin", "editor"]}>
+                <DashArticleListPage />
+              </ProtectedRoute>
+            ),
           },
         ],
       },

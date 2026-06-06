@@ -1,4 +1,5 @@
-import { Box, Grid, Card, CardContent, Typography } from '@mui/material';
+import { Box, Card, CardContent, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { PieChart } from '@mui/x-charts/PieChart';
 import { BarChart } from '@mui/x-charts/BarChart';
 import logo from '../../assets/styles/oopsiedy-logo.jpg';
@@ -25,19 +26,7 @@ const DashboardPage = () => {
     { country: 'Jul', value: 320 },
   ];
 
-  // Metro Manila coordinates for Google Maps
-  const metroManilaUsers = [
-    { lat: 14.5995, lng: 120.9842, name: 'John - Makati', title: 'Makati Admin' },
-    { lat: 14.6485, lng: 121.0304, name: 'Jane - QC', title: 'Quezon City User' },
-    { lat: 14.5882, lng: 121.0642, name: 'Bob - Pasig', title: 'Pasig Moderator' },
-    { lat: 14.4849, lng: 120.9935, name: 'Alice - Parañaque', title: 'Parañaque User' },
-    { lat: 14.6375, lng: 121.0015, name: 'Charlie - Mandaluyong', title: 'Mandaluyong Admin' },
-    { lat: 14.5995, lng: 120.9842, name: 'Admin - Manila', title: 'Manila Admin' },
-    { lat: 14.5571, lng: 120.9995, name: 'Test - Pasay', title: 'Pasay User' },
-    { lat: 14.6020, lng: 121.0400, name: 'User - San Juan', title: 'San Juan User' },
-    { lat: 14.4570, lng: 120.9870, name: 'Las Piñas User', title: 'Las Piñas' },
-    { lat: 14.6203, lng: 121.1791, name: 'Marikina User', title: 'Marikina' },
-  ];
+
 
   return (
     <Box sx={{ 
@@ -82,7 +71,7 @@ const DashboardPage = () => {
         {/* Stats Cards */}
         <Grid container spacing={4} sx={{ mb: 10 }}>
           {stats.map((stat, index) => (
-            <Grid item xs={12} lg={6} key={index}>
+            <Grid size={{ xs: 12, lg: 6 }} key={index}>
               <Card sx={{ 
                 height: 200,
                 border: '3px solid #1e1b4b',
@@ -139,7 +128,7 @@ const DashboardPage = () => {
 
         {/* Charts Row */}
         <Grid container spacing={4} sx={{ mb: 10 }}>
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{ 
               border: '3px solid #1e1b4b',
               borderRadius: 4,
@@ -186,7 +175,7 @@ const DashboardPage = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{ 
               border: '3px solid #1e1b4b',
               borderRadius: 4,

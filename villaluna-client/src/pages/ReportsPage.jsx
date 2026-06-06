@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
-import { Box, Typography, Grid, Card, CardContent, Stack, Button, Divider } from '@mui/material';
+import { useRef } from 'react';
+import { Box, Typography, Card, CardContent, Stack, Button, Divider } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import PrintIcon from '@mui/icons-material/Print';
 import { LineChart, PieChart } from '@mui/x-charts';
 
@@ -137,7 +138,7 @@ const ReportsPage = () => {
         </Typography>
 
         <Grid container spacing={2}>
-          <Grid item xs={12} lg={8}>
+          <Grid size={{ xs: 12, lg: 8 }}>
             <Card className="section-card" elevation={0} sx={{ border: '1px solid #e2e8f0' }}>
               <CardContent>
                 <Typography className="section-title" variant="h6" color="primary.main" mb={1}>
@@ -154,7 +155,7 @@ const ReportsPage = () => {
             </Card>
           </Grid>
 
-          <Grid item xs={12} lg={4}>
+          <Grid size={{ xs: 12, lg: 4 }}>
             <Card className="section-card" elevation={0} sx={{ border: '1px solid #e2e8f0' }}>
               <CardContent>
                 <Typography className="section-title" variant="h6" color="primary.main" mb={1}>
@@ -175,7 +176,7 @@ const ReportsPage = () => {
             </Card>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={12}>
             <Card className="section-card" elevation={0} sx={{ border: '1px solid #e2e8f0' }}>
               <CardContent>
                 <Typography className="section-title" variant="h6" color="primary.main" mb={2}>
