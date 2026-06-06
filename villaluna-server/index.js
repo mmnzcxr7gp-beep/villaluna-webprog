@@ -8,14 +8,22 @@ const articleRoutes = require("./routes/articleRoutes");
 
 dotenv.config();
 
-// Connect to MongoDB
-connectDB();
-
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Ensure MongoDB is connected before handling any request (serverless-safe)
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error("DB connection middleware error:", error.message);
+    res.status(503).json({ message: "Database connection failed." });
+  }
+});
 
 // Health check
 app.get("/", (req, res) => {
